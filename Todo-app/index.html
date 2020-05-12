@@ -1,0 +1,38 @@
+<html ng-app="myApp">
+    <head>
+        <script src="angular.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <div ng-controller="TodoController as c1">
+
+            <div>
+                <p> Add a todo</p>
+                <input type="text" ng-model="c1.newTodo"></input>
+                <button ng-click="c1.addNewTodo()">Add</button>
+            </div>
+
+
+            <div>
+                <p>Tour Todos:</p>
+                <button ng-hide="c1.editMode" ng-click="c1.triggerEditMode()">Edit</button>
+                <button ng-show="c1.editMode" ng-click="c1.triggerEditMode()">Done</button> 
+            </div>
+
+            <div>
+                <ol>
+                    <!-- Track here is to let us add duplicate values and checking them based on $index -->
+                    <li ng-repeat="todo in c1.todos track by $index">
+                        <span ng-hide="c1.editMode" ng-bind="todo"></span>
+                        <input ng-model="todo" ng-show="c1.editMode" type="text" ></input>
+                        <!-- The $index will take the position of the value that is passed to looping variable 
+                        here it is "todo" from todos-->
+                        <button ng-hide="c1.editMode" ng-click="c1.deleteTodo($index)">Delete</button>
+                    </li>
+                </ol>
+            </div>
+
+        </div>
+
+    </body>
+</html>

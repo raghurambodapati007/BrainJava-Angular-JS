@@ -1,0 +1,15 @@
+<html ng-app="myApp">
+    <head>
+        <script src="angular.js"></script>
+        <script src="app.js"></script>
+        <title>Nested Scopes</title>
+    </head>
+    <body>
+        <div ng-controller="ctrl1">
+            <p>Controller 1 value is : {{testValue}}</p>
+            <div ng-controller="ctrl2">
+                <p>Controller 2 value is : {{testValue}}</p>
+            </div>
+        </div>
+    </body>
+</html>

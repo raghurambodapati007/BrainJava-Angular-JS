@@ -1,0 +1,36 @@
+<html ng-app="myApp">
+    <head>
+        <script src="angular.js"></script>
+        <script src="app.js"></script>
+        
+    </head>
+    <body>
+         <div ng-controller="ngHideAndngShow as c1">
+            <input type="checkbox" ng-model="c1.checkValue"></input>
+            <p ng-hide="c1.checkValue" >Show content </p>
+        </div>
+        <h1>-------------------------------------------------</h1>
+        <h1>Looping through ng-repeat</h1>
+
+        <div ng-controller="ngRepeat as c2">
+            <p ng-repeat="i in c2.myList">Hello</p>
+             <div ng-repeat="person in c2.Person">
+                 
+                 <p>
+                     {{person.name}}
+                     <span>
+                         {{person.age}}
+                     </span>
+                 </p>
+             </div>
+        </div> 
+        <h1>-------------------------------------------------</h1>
+        <div ng-controller="objectList as c3">
+            <div ng-repeat="obj in c3.list">
+                <p> {{obj.name}} </p> 
+            </div>
+
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<html ng-app="myApp">
+<head>
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+    <title>ng examples</title>
+</head>
+
+<body>
+    <div ng-controller="ngExamples">    
+          
+       <p>Please Enter Your userName: <input type="text" ng-model="userName"></input> <br><br></p>
+       <p> please enter checkbox value : <input type="checkbox" ng-model="checkBoxValue"></input> <br><br> </p>
+       <p> Please enter radio button value : 
+
+                <input type="radio" ng-model="radioButtonValue" value="opt1">opt1</input>
+                <input type="radio" ng-model="radioButtonValue" value="opt2">opt2</input>
+                <input type="radio" ng-model="radioButtonValue" value="opt3">opt3</input>
+                <input type="radio" ng-model="radioButtonValue" value="opt4">opt4</input></p> <br>
+
+        <p> Please enter current date : <input type="date" ng-model="currentDateValue"></input></p>
+        
+        <div>
+                <p>The check box value is : {{checkBoxValue }}</p>
+                <p>The current time is : {{currentDateValue}}</p>
+                <p>your name is {{userName}}</p>
+                <p>The radio button value is {{radioButtonValue}}</p>
+        </div>
+
+    </div>
+</body>
+</html>

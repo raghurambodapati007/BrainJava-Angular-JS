@@ -1,0 +1,27 @@
+<html ng-app="myApp">
+<head>
+    <script src="angular.js"></script>
+</head>
+<!--  ng-init is replaced in Main method  -->
+<body>
+    <div ng-controller="mainCtrl">
+        <h1>Hello Angular !</h1>
+        <p ng-if="hourOfDay < 12">Good Morning !</p>
+        <p ng-if="hourOfDay > 17">Good Evening !</p>
+        <p>The hour of the day is : {{hourOfDay}}</p>
+    </div>
+    <script>
+        // Get the module by angular object and assign it to a variable 
+        var module=angular.module("myApp",[]);  
+        // from the variable you get add controller and register and specify method it need to call beofre that controller 
+        module.controller("mainCtrl",Main);  
+
+        // you will get the $Scope object from angular , angular just adds "The Scope" obj just by looking at the method parameters
+        function Main($scope){
+            $scope.hourOfDay = 10;
+            console.log("main called"); 
+        }
+
+    </script>
+</body>
+</html>

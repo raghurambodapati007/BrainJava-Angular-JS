@@ -1,0 +1,23 @@
+<html ng-app="myApp">
+    <head>
+        <script src="angular.js"></script>
+        <script src="app.js"></script>
+        <script src="sharingModule.js"></script>
+    </head>
+    <body>
+        <div ng-controller="normalController as c1">
+
+            <p style="background-color:grey">
+                Here, the script src="sharingModule.js" is for sharingModule that is an shared facility
+                 where we can get the functionality from other modules too so we imported it.
+
+                 One more point to add is we register this controller in the [] of the modeul of this class 
+                 example is "angular.module("myApp",["sharingModule"]);"
+            </p>
+
+            <p>{{c1.sharedMessage}}</p>
+
+        </div>
+
+    </body>
+</html>

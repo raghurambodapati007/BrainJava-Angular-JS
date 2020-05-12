@@ -1,0 +1,18 @@
+<html ng-app="myApp">
+    <head>
+        <script src="angular.js"></script>
+        <script src="app2.js"></script>
+        <title>Nested Scopes</title>
+    </head>
+    <body>
+<!-- using nested Controllers with AS alias helps us to get any controllers scope property
+unlike normal nested contrller because there we get only parent controller value and moves up till root scope. -->
+        <div ng-controller="ctrl1 as c1">
+            <p>Controller 1 value is : {{c1.testValue}}</p>
+            <div ng-controller="ctrl2 as c2" >
+                <p>Controller 2 value is : {{c2.testValue}}</p>
+            </div>
+        </div>
+    </body>
+</html>
+
